@@ -1,0 +1,107 @@
+
+@{
+    Layout = "guestManu";
+}
+
+
+<div>
+  
+    <div class="form-horizontal">
+        <div class="contentBox">
+            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Symptom Checker: <span>Male</span></h1>
+            <div class='symptomBoxWrapper'>
+                <p class='intro-text active'><b>Step 2:</b> Select a body part where you are experiencing symptoms.</p>
+                <div class='symptomBox clearAfter'>
+                    <div class="col-md-3 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                        <ul>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="1"  onmouseover='symptomBody(1);' onmouseout='symptomBody(0);'>Head and Neck</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart'data-url="2" onmouseover='symptomBody(2);' onmouseout='symptomBody(0);'>Eyes</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="3" onmouseover='symptomBody(3);' onmouseout='symptomBody(0);'>Ear, Nose and Throat</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="4" onmouseover='symptomBody(4);' onmouseout='symptomBody(0);'>Chest and Back</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="5" onmouseover='symptomBody(5);' onmouseout='symptomBody(0);'>Arms and Hands</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="6" onmouseover='symptomBody(6);' onmouseout='symptomBody(0);'>Abdomen and Pelvis</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="7" onmouseover='symptomBody(7);' onmouseout='symptomBody(0);'>Legs and Feet</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="8" onmouseover='symptomBody(8);' onmouseout='symptomBody(0);'>Other</li></a>
+                            
+                            @*<a class='btn form-control btn-danger list-group-item-success' href='/symptom-checker/'<li class="footer">Start over</li></a>*@
+                        </ul>
+                        @*<div class="col-md-offset-2 col-md-10">
+                          
+                            <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="SUBMIT">
+                        </div>*@
+                    </div>
+                    <div class='col-md-6  welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg'>
+                        <img id='bodyModel' alt='' src='~/images/pics/female/female.jpg' width='266' height='400' usemap='#SymptomMap' />
+                        <img alt='' src='~/images/pics/female/female-1.jpg'  width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src='~/images/pics/female/female-2.jpg' data-url="2" width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src='~/images/pics/female/female-3.jpg' data-url="3" width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src='~/images/pics/female/female-4.jpg' data-url="4" width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src='~/images/pics/female/female-5.jpg' data-url="5" width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src='~/images/pics/female/female-6.jpg' data-url="6" width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src='~/images/pics/female/female-7.jpg' data-url="7" width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src='~/images/pics/female/female-8.jpg' data-url="8" width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <map id='SymptomMap' name='SymptomMap'>
+                            <!-- Head/Neck -->
+                            <area href='/symptom-checker/female/head-neck.html' onmouseover='symptomBody(1);' onmouseout='symptomBody(0);' shape='poly' coords='79,13,82,9,88,5,95,5,101,7,105,12,108,17,108,20,93,20,77,20,76,19' alt='Head and Neck' />
+                            <area href='/symptom-checker/female/head-neck.html' onmouseover='symptomBody(1);' onmouseout='symptomBody(0);' shape='poly' coords='80,50,105,50,105,59,104,60,99,64,86,64,79,60,79,59,80,52' alt='Head and Neck' />
+                            <!-- Eyes -->
+                            <area href='/symptom-checker/female/eyes.html' onmouseover='symptomBody(2);' onmouseout='symptomBody(0);' shape='circle' coords='87,27,6' alt='Eyes' />
+                            <area href='/symptom-checker/female/eyes.html' onmouseover='symptomBody(2);' onmouseout='symptomBody(0);' shape='circle' coords='100,27,6' alt='Eyes' />
+                            <!-- Ears/Nose/Throat -->
+                            <area href='/symptom-checker/female/ear-nose-throat.html' onmouseover='symptomBody(3);' onmouseout='symptomBody(0);' shape='poly' coords='76,25,77,25,81,29,81,41,79,44,74,37,74,31,76,25' alt='Ears, Nose, Throat' />
+                            <area href='/symptom-checker/female/ear-nose-throat.html' onmouseover='symptomBody(3);' onmouseout='symptomBody(0);' shape='poly' coords='109,25,111,31,111,36,106,44,104,41,104,29,109,25' alt='Ears, Nose, Throat' />
+                            <area href='/symptom-checker/female/ear-nose-throat.html' onmouseover='symptomBody(3);' onmouseout='symptomBody(0);' shape='poly' coords='91,29,94,29,98,35,98,49,87,49,87,35,91,29' alt='Ears, Nose, Throat' />
+                            <!-- Chest -->
+                            <area href='/symptom-checker/female/chest-back.html' onmouseover='symptomBody(4);' onmouseout='symptomBody(0);' shape='poly' coords='65,66,94,64,121,67,126,109,121,134,66,134,59,109' alt='Chest and Back' />
+                            <!-- Arms -->
+                            <area href='/symptom-checker/female/arms-hands.html' onmouseover='symptomBody(5);' onmouseout='symptomBody(0);' shape='poly' coords='64,67,57,111,44,142,38,155,28,168,20,182,23,196,17,213,14,222,7,211,6,199,11,188,25,142,36,123,43,105,45,85,51,73' alt='Arms and Hands' />
+                            <area href='/symptom-checker/female/arms-hands.html' onmouseover='symptomBody(5);' onmouseout='symptomBody(0);' shape='poly' coords='122,67,136,74,141,86,144,109,151,125,160,140,175,187,181,200,174,221,169,208,165,197,165,182,144,149,138,132,127,109,122,68' alt='Arms and Hands' />
+                            <!-- Abdomen -->
+                            <area href='/symptom-checker/female/abdomen-pelvis.html' onmouseover='symptomBody(6);' onmouseout='symptomBody(0);' shape='poly' coords='66,135,94,135,121,135,127,171,96,194,90,194,60,173' alt='Abdomen and Pelvis' />
+                            <!-- Legs -->
+                            <area href='/symptom-checker/female/legs-feet.html' onmouseover='symptomBody(7);' onmouseout='symptomBody(0);' shape='poly' coords='95,196,126,173,130,194,130,219,126,255,126,276,130,294,130,311,124,340,119,359,121,379,127,391,107,394,104,388,107,356,106,307,107,288,101,236,95,218' alt='Legs and Feet' />
+                            <area href='/symptom-checker/female/legs-feet.html' onmouseover='symptomBody(7);' onmouseout='symptomBody(0);' shape='poly' coords='59,174,91,196,90,217,84,247,83,264,78,290,81,310,79,322,78,351,82,388,78,393,60,391,67,362,63,345,59,324,55,302,59,280,60,264,57,240,55,208,58,194' alt='Legs and Feet' />
+                        </map>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+@section Scripts{
+<script>
+
+    // Change body image
+    function symptomBody(part) {
+        if (part > 0) {
+            var src = '/images/pics/female/female-' + part + '.jpg';
+            $('#guideBody-' + part).addClass('guideHover');
+        } else {
+            var src = '/images/pics/female/female.jpg';
+            $('.guideHover').removeClass('guideHover');
+        }
+        $('#bodyModel').attr('src', src)
+    }
+
+
+    $('.bodypart').click(function () {
+      
+        var img = $(this).data("url");
+        var key = $(this).html();
+        alert(img);
+        window.location.href = "/guest/Selector?key=" + key + "&img=" + img;
+        
+        
+        });
+
+</script>
+
+
+
+
+ }
+

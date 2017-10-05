@@ -1,0 +1,54 @@
+
+@{
+    Layout = "navbaradmin";
+}
+
+<div id="page-content-wrapper">
+
+    <div class="form-horizontal">
+        <div >
+
+            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Symptom Checker</h1>
+            <div class='col-lg-12'>
+ 
+                    <form action='/symptom-checker/' method='get'>
+                        <div class='symptomBoxNav'>
+                            <h2>Get Started</h2>
+                            <p>Select man, women or child below. You may then select a part of the body where symptoms occur.</p>
+                            <div class="col-md-3 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                                <ul >
+                                    
+                                    <a href="/User/FamilyMan/"> <li class='btn form-control btn-primary list-group-item-info ' onmouseover="symptomBody('male');" onmouseout="symptomBody('');"> Man</li></a><br/>
+                                    <a href="/UserForWomen/FamilyWomen/"> <li class='btn form-control btn-primary list-group-item-info ' onmouseover="symptomBody('female');" onmouseout="symptomBody('');"> Women</li></a>
+                                    <a href="/UserForChild/FamilyChild/"> <li class='btn form-control btn-primary list-group-item-info ' onmouseover="symptomBody('child');" onmouseout="symptomBody('');"> Child</li></a>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class='col-md-7  welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg'>
+
+                        <img id='bodyModel' alt='' src="~/images/pics/family.jpg" width='252' height='400' />
+                        <img alt='' src="~/images/pics/family_child.jpg" width='252' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src="~/images/pics/family_female.jpg" width='252' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                        <img alt='' src="~/images/pics/family_male.jpg" width='252' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+        <script>
+
+            function symptomBody(type) {
+                var src = (type.length > 0)
+                    ? '/images/pics/family_' + type + '.jpg'
+                    : '/images/pics/family.jpg';
+                $('#bodyModel').attr('src', src)
+            }
+
+        </script>
+
+

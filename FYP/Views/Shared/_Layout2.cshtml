@@ -1,0 +1,103 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Robo Doc, Online Doctor Consultant Website, Online medication site, free symptoms diagnose site" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <title>@ViewData["Title"] - FYP</title>
+
+    <environment names="Development">
+        @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+        @*<link rel="stylesheet" href="~/css/site.css" />*@
+        <!-- web-fonts -->
+        <link href="//fonts.googleapis.com/css?family=Enriqueta:400,700" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        <!-- //web-fonts -->
+        <!-- Custom Theme files -->
+        <link href="~/Theme/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+        <link href="~/Theme/css/style.css" type="text/css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="~/Theme/css/swipebox.css">
+        <link href="~/Theme/css/animate.css" rel="stylesheet" type="text/css" media="all"> <!-- animation -->
+        <link href="~/Theme/css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
+        <!-- //Custom Theme files -->
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body>
+   
+
+        <div class=" body-content">
+            @RenderBody()
+            <div class="footer-bottom" >
+                
+                <div class="col-md-6 lef"> <p>© 2017 Robo Doc . All rights reserved</p></div>
+                <div class="col-md-offset-6 social-icons wow fadeInRight animated" data-wow-delay=".5s">
+                    <ul>
+                        <li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>
+                        <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+                        <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+                        <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+                    </ul>
+                    </div>
+
+                </div>
+           
+
+        </div>
+
+        <environment names="Development">
+            @*<script src="~/lib/jquery/dist/jquery.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>*@
+            <!-- Stats-Number-Scroller-Animation-JavaScript -->
+            <script src="~/Theme/js/waypoints.min.js"></script>
+            <script src="~/Theme/js/counterup.min.js"></script>
+            <!-- js -->
+            <script src="~/Theme/js/jquery-2.2.3.min.js"></script>
+            <script src="~/Theme/js/counterup.min.js"></script>
+            <script src="~/Theme/js/waypoints.min.js"></script>
+            <!-- //js -->
+            <script src="~/Theme/js/bootstrap.js"></script>
+            <script type="text/javascript" src="~/Theme/js/move-top.js"></script>
+            <script type="text/javascript" src="~/Theme/js/easing.js"></script>
+            <script src="~/Theme/js/wow.min.js"></script>
+            <!-- ResponsiveTabs -->
+            <script src="~/Theme/js/easyResponsiveTabs.js" type="text/javascript"></script>
+            <!-- swipe box js -->
+            <script src="~/Theme/js/jquery.swipebox.min.js"></script>
+            <script src="~/Theme/js/wow.min.js"></script>
+            <!-- start-smooth-scrolling -->
+            <script type="text/javascript" src="~/Theme/js/move-top.js"></script>
+            <script type="text/javascript" src="~/Theme/js/easing.js"></script>
+            <script src="~/Theme/js/bootstrap.js"></script>
+        </environment>
+        <environment names="Staging,Production">
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+            </script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>
+
+        @RenderSection("Scripts", required: false)
+        
+ 
+
+</body>
+</html>

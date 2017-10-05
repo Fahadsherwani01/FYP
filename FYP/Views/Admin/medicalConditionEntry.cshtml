@@ -1,0 +1,136 @@
+@model FYP.Models.Tbladminmedicationrecord
+
+@{
+    ViewData["Title"] = "medicalConditionEntry";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+<h2>medicalConditionEntry</h2>
+
+<form asp-action="medicalConditionEntry">
+    <div class="form-horizontal">
+        <h4>Tbladminmedicationrecord</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Gender" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Gender" class="form-control" />*@
+
+                <select name="age">
+                  
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Child</option>
+                </select>
+
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Bodypart" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Bodypart" class="form-control" />*@
+                <select name="part">
+                    <option>Head and Neck</option>
+                    <option>Eye</option>
+                    <option>Ear, Nose and Throat</option>
+                    <option>Chest and Back</option>
+                    <option>Arms and Hands</option>
+                    <option>Abdomen and Pelvis</option>
+                    <option>Legs and Feet</option>
+                    <option>Other</option>
+                </select>
+              
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Disease" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Disease" class="form-control" />
+                <span asp-validation-for="Disease" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Bloodpresure" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Bloodpresure" class="form-control" />
+                <span asp-validation-for="Bloodpresure" class="text-danger"></span>*@
+                <select name="bloodpressure" id="bloodpressure">
+                    <option>Normal</option>
+                    <option>High</option>
+                    <option>Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Heartbeat" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Heartbeat" class="form-control" />
+                <span asp-validation-for="Heartbeat" class="text-danger"></span>*@
+                <select name="heartbeat">
+                    <option>Normal</option>
+                    <option>High</option>
+                    <option>Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Temprature" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Temprature" class="form-control" />
+                <span asp-validation-for="Temprature" class="text-danger"></span>*@
+                <select name="temperature">
+                    <option>Normal</option>
+                    <option>High</option>
+                    <option>Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Generalsymptoms" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Generalsymptoms" class="form-control" />
+                <span asp-validation-for="Generalsymptoms" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Medicine" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Medicine" class="form-control" />
+                <span asp-validation-for="Medicine" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Dosage" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Dosage" class="form-control" />
+                <span asp-validation-for="Dosage" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Precautions" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Precautions" class="form-control" />
+                <span asp-validation-for="Precautions" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Diet" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Diet" class="form-control" />
+                <span asp-validation-for="Diet" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

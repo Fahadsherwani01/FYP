@@ -1,0 +1,73 @@
+﻿@model Tuple<string,string,string,string>
+
+
+@{
+    Layout = "guestManu";
+}
+
+
+
+<div>
+    <div class="form-horizontal">
+        <div class="contentBox">
+            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Medication</h1>
+            
+                <p class='text-info'><b>Step 5:</b> Take our medicine properly you will get cured</p>
+                <div class="col-md-12 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                    
+                      
+                    <div class="panel panel-primary">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"><h4 style="text-align:center">Patient Medication</h4></div>
+                        <div class="panel-body">
+                            <p>...</p>
+                        </div>
+
+                        <!-- Table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <td>@Model.Item3</td>
+                                </tr>
+                                <tr>
+                                    <th>Dosage</th>
+                                    <td>@Model.Item2</td>
+                                </tr>
+                                <tr>
+                                   
+                                <th>Precautions</th>
+                                    <td>@Model.Item4</td>
+                            </tr>
+                                <tr>
+                                    <th>Diet</th>
+                                    <td>@Model.Item1</td>
+                                </tr>
+                            </thead>
+                           
+                            
+                        </table>
+                    </div>
+                    
+                    @*<div class="col-md-offset-2 col-md-10">
+
+                        <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
+                    </div>*@
+                </div>
+                <div class='col-md-9'>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+@*<script>
+    $('.symptom').click(function () {
+
+        var key = $(this).html();
+        window.location.href = "/User/MSelector?key=" + key;
+
+
+    });
+
+</script>*@

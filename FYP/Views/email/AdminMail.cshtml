@@ -1,0 +1,52 @@
+@model FYP.Models.Email
+
+@{
+    ViewData["Title"] = "AdminMail";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+<h2>AdminMail</h2>
+
+<form asp-action="AdminMail">
+    <div class="form-horizontal">
+        <h4>Email</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label  class="col-md-2 control-label">Gander</label>
+            <div class="col-md-10">
+                <input class="form-control" id="gander" name="gander" value=@ViewBag.gander />
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="col-md-2 control-label">Bodypart</label>
+            <div class="col-md-10">
+                <input class="form-control" id="bodypart" name="bodypart" value="@ViewBag.bodypart" />
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="col-md-2 control-label">Diseace</label>
+            <div class="col-md-10">
+                <input  class="form-control" id="diseace" name="diseace" value="@ViewBag.diseace" />
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Genral Symptoms</label>
+            <div class="col-md-10">
+                <input class="form-control" id="gsSymptoms" name="gsSymptoms"/>
+              
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+

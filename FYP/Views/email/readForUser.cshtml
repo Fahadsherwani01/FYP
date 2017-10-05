@@ -1,0 +1,75 @@
+﻿@model Email
+
+@{ 
+    Layout = "navbaradmin";
+}
+
+<div>
+    <div class="form-horizontal">
+        <div class="contentBox">
+            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Medical Detail</h1>
+
+            <div class="col-md-12 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                   
+                        <div class="panel-heading"><h4 style="text-align:center">Patient Medication</h4></div>
+                        <div class="panel-body">
+                            <p>...</p>
+                        </div>
+
+                    <!-- Table -->
+                    
+                        
+                    
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Message</th>
+                                    <td><label class="">@Model.Message</label></td>
+                                </tr>
+                              
+                            </thead>
+
+
+                        </table>
+                    
+                    <form asp-action="replyToUser" asp-controller="email">
+                        <div class="col-lg-6">
+                        <div>
+                            To<input id="to" name="to" class="input-group" value="@Model.From" />
+                            From<input id="from1" name="from1" class="input-group" value="@Model.To" />
+                        </div>
+                            <div class="input-group">
+                               
+                                <input type="text" class="form-control" placeholder="">
+                                <span class="input-group-btn">
+                                 
+                                    <input type="submit" class="btn btn-default" id="reply" value="Send" />
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </form>
+                </div>
+                @*<div class="col-md-offset-2 col-md-10">
+
+                        <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
+                    </div>*@
+            </div>
+            <div class='col-md-9'>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+        $("#reply").click(function () {
+
+
+        });
+    </script>
+}
+

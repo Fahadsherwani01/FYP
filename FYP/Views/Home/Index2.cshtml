@@ -1,0 +1,415 @@
+﻿@model IEnumerable<feedback>
+
+@{
+    ViewData["Title"] = "Robo Doc";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+} 
+
+        <!-- banner -->
+        <div id="home" class="banner" >
+            <div class="container-fluid" >
+                <div class="wthree-header">
+                    <div class="agileits-logo navbar-left">
+                        <h1 class="wow swing animated" data-wow-delay=".5s"><a href="index.html">Robo Doc</a></h1>
+                    </div>
+           
+                        
+                          @await Html.PartialAsync("_LoginPartial");
+                        
+                
+                    <div class="clearfix"> </div>
+                </div>
+                <!-- navigation -->
+                <div class="top-w3lnav">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header w3l-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                Menu
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-center w3l-effect">
+                                <li><a href="/Home/Index2">Home</a></li>
+                                <li><a href="/User/WelcomeUser">Checkup</a></li>
+                                <li><a href="#about" class="scroll">About</a></li>
+                                <li><a href="#services" class="scroll">Services</a></li>
+                                <li><a href="#team" class="scroll">Team</a></li>
+                                <li><a href="#contact" class="scroll">Contact</a></li>
+                                
+                            </ul>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- navigation -->
+                <!-- arrow bounce -->
+                <div class="agileits-arrow bounce animated"><a href="#welcome" class="scroll"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a></div>
+                <!-- //arrow bounce -->
+            </div>
+        </div>
+        <!-- //banner -->
+        <!-- about -->
+        <div id="about" class="about">
+            <!-- container -->
+            <div class="container">
+                <h3 class="w3layouts-title wow fadeInDown animated" data-wow-delay=".5s">About Us</h3>
+                <div class="about-agileitsrow">
+                    <div class="col-md-8 about-left wow slideInLeft animated" data-wow-delay=".5s">
+                        <div class="col-md-4 col-sm-4 col-xs-4 about-img wow zoomInLeft animated" data-wow-delay=".9s">
+                            <img src="images/img1.jpg" alt="">
+                        </div>
+                        <div class="col-md-8 col-sm-8 about-w3ls-text wow zoomInRight animated" data-wow-delay=".9s">
+                            <p> We believe healthy life is everyone's Basic Right. We are puting a step forward towards revoultion in medical field. we believe use of technology enhances efficiency of each field and so will the medical </p>
+                            <p> Our purpose is not to eliminate the doctors from society but share their load. Minimize the distance between people and health that high fees of doctors have created.</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-4 about-right w3-agileits wow slideInRight animated" data-wow-delay=".5s">
+                        <h4>Our Advantages </h4>
+                        <ul>
+                            <li><span class="glyphicon glyphicon-menu-right"></span>Time Saving Health Advisor</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span>An Advice That You Can Trust</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span>Cheaper but Efficient Suggested Drugs</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span>Expert Doctor's Advice based Prescription </li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span>We Charge No Fee</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span>We are Life Savers When no one is near You to Assist you</li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <!-- //container -->
+        </div>
+        <!-- //about -->
+        <!-- services -->
+        <div id="services" class="services">
+            <!-- container -->
+            <div class="container">
+                <h3 class="w3layouts-title wow fadeInDown animated" data-wow-delay=".5s">Services</h3>
+                <div class="services-w3row">
+                    <div class="col-md-3 col-sm-3 col-xs-6 services-agile-grid">
+                        <span class="glyphicon glyphicon-check wthree-effect" aria-hidden="true"></span>
+                        <div class="services-text w3-agileits">
+                            <h5 class="w3-agile-counter">0</h5>
+                            <p>Views</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 services-agile-grid">
+                        <span class="glyphicon glyphicon-user wthree-effect" aria-hidden="true"></span>
+                        <div class="services-text">
+                            <h5 class="w3-agile-counter">2</h5>
+                            <p>Visitor</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 services-agile-grid">
+                        <span class="glyphicon glyphicon-heart-empty wthree-effect" aria-hidden="true"></span>
+                        <div class="services-text w3-agileits">
+                            <h5 class="w3-agile-counter">0</h5>
+                            <p>Likes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 services-agile-grid">
+                        <span class="glyphicon glyphicon-bookmark wthree-effect" aria-hidden="true"></span>
+                        <div class="services-text">
+                            <h5 class="w3-agile-counter">0</h5>
+                            <p>Tags</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+               <!-- Stats-Number-Scroller-Animation-JavaScript -->
+                <!--<script src="~/Theme/js/waypoints.min.js"></script>
+                <script src="~/Theme/js/counterup.min.js"></script>-->
+                <script>
+                    jQuery(document).ready(function ($) {
+                        $('.w3-agile-counter').counterUp({
+                            delay: 10,
+                            time: 1000
+                        });
+                    });
+                </script>
+                <!-- //Stats-Number-Scroller-Animation-JavaScript -->
+            </div>
+            <!-- //container -->
+        </div>
+        <!-- //services -->
+        <!-- team -->
+        <div id="team" class="team">
+            <div class="container">
+                <h3 class="w3layouts-title wow fadeInDown animated" data-wow-delay=".5s">Our Team</h3>
+                <div class="team-info">
+                    <div class="col-md-4 team-grids wow zoomIn animated" data-wow-delay=".5s">
+                        <img class="img-responsive" src="images/t1.jpg" alt="">
+                        <div class="agileits-captn">
+                            <div class="social-icons">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/fahadali.khan.7161" class="fa fa-facebook icon-border facebook"> </a></li>
+                                    <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+                                    <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+                                    <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Fahad Ali Khan</h4>
+                        <p>Cheif Developer MVC Expert (BS.IT) Master In Web Application development </p>
+                    </div>
+                    <div class="col-md-4 team-grids wow zoomIn animated" data-wow-delay=".5s">
+                        <img class="img-responsive" src="images/img1.jpg" alt="">
+                        <div class="agileits-captn">
+                            <div class="social-icons">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/Usman.iftikhar881" class="fa fa-facebook icon-border facebook"> </a></li>
+                                    <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+                                    <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+                                    <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Usman Iftikhar</h4>
+                        <p>Executive Member as Cheif Web developer (BS.IT) Masters in Webapplication development and Designing</p>
+                    </div>
+                    <div class="col-md-4 team-grids wow zoomIn animated" data-wow-delay=".5s">
+                        <img class="img-responsive" src="images/t2.jpg" alt="">
+                        <div class="agileits-captn">
+                            <div class="social-icons">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/hamxa141" class="fa fa-facebook icon-border facebook"> </a></li>
+                                    <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+                                    <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+                                    <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Hamza Khalid</h4>
+                        <p>Executive Member as Cheif Hardware developer and data collecting and analysing engineer. Cheif of data integration  </p>
+                    </div>
+                    
+                   
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="team-info">
+                    <div class="col-md-4 team-grids wow zoomIn animated" data-wow-delay=".5s">
+                        <img class="img-responsive" src="images/t3.jpg" alt="">
+                        <div class="agileits-captn">
+                            <div class="social-icons">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/Salman.masih" class="fa fa-facebook icon-border facebook"> </a></li>
+                                    <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+                                    <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+                                    <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Salman Masih</h4>
+                        <p>Cheif Incharge of All the Departments </p>
+                    </div>
+                    <div class="col-md-4 team-grids wow zoomIn animated" data-wow-delay=".5s">
+                        <img class="img-responsive" src="images/t3.jpg" alt="">
+                        <div class="agileits-captn">
+                            <div class="social-icons">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/eng.asharmughal" class="fa fa-facebook icon-border facebook"> </a></li>
+                                    <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+                                    <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+                                    <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Ashar Azeem</h4>
+                        <p>Electronics Advisor (B-Tech Electronics UOL) </p>
+                    </div>
+                    <div class="col-md-4 team-grids wow zoomIn animated" data-wow-delay=".5s">
+                        <img class="img-responsive" src="images/t3.jpg" alt="">
+                        <div class="agileits-captn">
+                            <div class="social-icons">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/zara.azeem" class="fa fa-facebook icon-border facebook"> </a></li>
+                                    <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+                                    <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+                                    <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Zartasha Irum</h4>
+                        <p>Cheif Medical Advisor (Doctor of Pharmacy) </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //team -->
+       
+       
+        <!-- //portfolio -->
+        <!-- testimonial -->
+        <div class="testimonial services">
+            <!-- container -->
+            <div class="container">
+                <h3 class="w3layouts-title wow fadeInDown animated" data-wow-delay=".5s">Feedback About us</h3>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active agileits-w3layouts">
+                            <div class="carousel-caption">
+                                <div class="testimonial-grids">
+                                    <div class="testimonial-left">
+                                        <img src="images/t4.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-right">
+                                        <h5></h5>
+                                        <p>
+                                            <span>"</span> A marvelous step yet limited. Quite helpful though keep it up <span>"</span>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                        @foreach (var item in Model)
+                        {
+                        <div class="item agileits-w3layouts">
+                            <div class="carousel-caption">
+                                <div class="testimonial-grids">
+                                    <div class="testimonial-left">
+                                        <img src="images/t5.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-right">
+                                        <h5>@item.Name</h5>
+                                        <p>
+                                            <span>"</span>@item.Comment <span>"</span>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        <div class="item agileits-w3layouts">
+                            <div class="carousel-caption">
+                                <div class="testimonial-grids">
+                                    <div class="testimonial-left">
+                                        <img src="images/t6.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-right">
+                                        <h5>Zubair Khalid</h5>
+                                        <p>
+                                            <span>"</span> This project made me realise technology has no limits its an initiative and very soon the time will come when one only visits his doctor for surgery <span>"</span>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.carousel -->
+            </div>
+            <!-- //container -->
+        </div>
+        <!-- //testimonial -->
+        <!-- contact -->
+        <div class="contact" id="contact">
+            <div class="container">
+                <h3 class="w3layouts-title wow fadeInDown animated" data-wow-delay=".5s">Contact Us</h3>
+                <div class="contact-form">
+                    <div class="col-md-7 contact-right wow fadeInRight animated" data-wow-delay=".5s">
+                        <h5>Miscellaneous information:</h5>
+                        <p>Kindly Give Us Your Suggestions How We Can Further Improve This </p>
+                        <form asp-action="email" method="post">
+                            <input type="text" id="Name" name="Name" placeholder="Name" required="">
+                            <input type="text" id="Email" class="email" name="Email" placeholder="Email" required="">
+                            <input type="text" id="Phone_no" name="Phone_no" placeholder="Phone" required="">
+                            <textarea name="Message" id="Message" placeholder="Message" required=""></textarea>
+                            <input class="wow zoomIn animated" data-wow-delay=".5s" type="submit" value="SUBMIT">
+                        </form>
+                    </div>
+                    <div class="col-md-5 contact-left">
+                        <div class="address wow fadeInLeft animated" data-wow-delay=".5s">
+                            <h5>Address:</h5>
+                            <p><i class="glyphicon glyphicon-home"></i> Office# 9 Able Plaza Sialkot Cantt Pakistan </p>
+                        </div>
+                        <div class="address address-mdl wow fadeInLeft animated" data-wow-delay=".5s">
+                            <h5>Phones:</h5>
+                            <p><i class="glyphicon glyphicon-earphone"></i> +92 334 4787578</p>
+                            <p><i class="glyphicon glyphicon-phone"></i> +92 336 4042627</p>
+                        </div>
+                        <div class="address wow fadeInLeft animated" data-wow-delay=".5s">
+                            <h5>Email:</h5>
+                            <p><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:info@robodoc.com">info@robodoc.com</a></p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //contact -->
+      @section Scripts{
+<!-- ResponsiveTabs -->
+<!-- <script src="~/Theme/js/easyResponsiveTabs.js" type="text/javascript"></script>-->
+<script type="text/javascript">
+    $("#ajaxxview").load("/Home/render")
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true   // 100% fit in a container
+        });
+    });
+</script>
+<!-- //ResponsiveTabs -->
+<!-- swipe box js -->
+<!-- <script src="~/Theme/js/jquery.swipebox.min.js"></script>-->
+<script type="text/javascript">
+    jQuery(function ($) {
+        $(".swipebox").swipebox();
+    });
+</script>
+<!-- //swipe box js -->
+        <!-- animation -->
+        <script src="~/Theme/js/wow.min.js"></script>
+        <script>
+                    new WOW().init();
+        </script>
+        <!-- //animation -->
+        <!-- start-smooth-scrolling -->
+        <script type="text/javascript" src="~/theme/js/move-top.js"></script>
+        <script type="text/javascript" src="~/theme/js/easing.js"></script>
+        <script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        $(".scroll").click(function (event) {
+                            event.preventDefault();
+                            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                        });
+                    });
+        </script>
+        <!-- //end-smooth-scrolling -->
+        <!-- smooth-scrolling-of-move-up -->
+        <script type="text/javascript">
+                    $(document).ready(function ($) {
+                        /*
+                        var defaults = {
+                            containerID: 'toTop', // fading element id
+                            containerHoverID: 'toTopHover', // fading element hover id
+                            scrollSpeed: 1200,
+                            easingType: 'linear'
+                        };
+                        */
+
+                        $().UItoTop({ easingType: 'easeOutQuart' });
+
+                    });
+        </script>
+        <!-- //smooth-scrolling-of-move-up -->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="~/Theme/js/bootstrap.js"></script>
+
+ }

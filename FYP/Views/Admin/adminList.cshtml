@@ -1,0 +1,75 @@
+﻿@model IEnumerable<User>
+
+@{ 
+    Layout = "adminLayout";
+}
+
+
+<div>
+    <div class="form-horizontal">
+        <div class="contentBox">
+            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Users</h1>
+
+            <div class="col-md-12 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading"><h4 style="text-align:center">Admin</h4></div>
+                    <div class="panel-body">
+                        <p>...</p>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>@item.UserName</th>
+                                <td>@item.Email</td>
+                                <th>@item.Address</th>
+                                <th><a class="btn btn-default admin" data-email=@item.Email >Make Admin</a></th>
+                              
+                            </tr>
+                           
+                           
+                        </thead>
+
+
+                    </table>
+                    }
+                </div>
+                @*<div class="col-md-offset-2 col-md-10">
+
+                        <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
+                    </div>*@
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script>
+        $('.admin').click(function () {
+
+            var key = $(this).data("email");
+            alert(key)
+            $.ajax({
+                url: "/Admin/removeAdmin?email="+key,
+                type: "Get",
+               
+
+                success: function (data) {
+
+                    alert("Added To ADMIN");
+                }
+
+            });
+
+
+    });
+
+    </script>
+
+}

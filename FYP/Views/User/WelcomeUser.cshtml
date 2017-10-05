@@ -1,0 +1,141 @@
+@model Tuple<string, string, string, string>
+
+@{
+    Layout = "navbaradmin";
+}
+
+<div>
+    <div class="form-horizontal">
+        <div class="body-content">
+
+            <!-- welcome -->
+            <div class="welcome" id="welcome">
+                <div>
+                    <h3 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Welcome </h3>
+                    <div class="welcome-info">
+                        <h2 class="wow fadeInLeft animated" data-wow-delay=".5s">Our Hospitality Specializations </h2>
+                        <p class="wel-text wow fadeInRight animated" data-wow-delay=".5s">Our purpose is not to eliminate the doctors from society but share their load. Minimize the distance between people and health that high fees of doctors have created</p>
+                        <div class="welcome-row">
+                            <div class="col-md-3 welcome-grids wow zoomIn animated" data-wow-delay=".5s">
+                                <a href="/User/MainPatientCategory"><h5>Check Up</h5></a>
+                                <p class="text">Click here to start your free checkup.</p>
+                                <div class="welcome-w3lsicon">
+                                    <span><i class="glyphicon glyphicon-briefcase"></i> </span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 welcome-grids welcome-mdl wow zoomIn animated" data-wow-delay=".5s">
+                                <a href="/User/userMedicalDetail"><h5>Medical History</h5></a>
+                                <p class="text">View your medication history by clicking here.</p>
+                                <div class="welcome-w3lsicon">
+                                    <span><i class="glyphicon glyphicon-check"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 welcome-grids  welcome-mdl1 wow zoomIn animated" data-wow-delay=".5s">
+                                <a href="/User/userMedicalDetail"><h5>Check Prescriptions</h5></a>
+                                <p class="text">Click here to know about the prescription that we recently provided you.</p>
+                                <div class="welcome-w3lsicon">
+                                    <span><i class="glyphicon glyphicon-education"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //welcome -->
+        </div>
+    </div>
+    @if (Model.Item1 != "0")
+    {
+    <div>
+        <div class="form-horizontal">
+            <div class="contentBox">
+                <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Medical Detail</h1>
+
+                <div class="col-md-12 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                    <div class="panel panel-primary">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"><h4 style="text-align:center">Patient Medication</h4></div>
+                        <div class="panel-body">
+                            <p>...</p>
+                        </div>
+
+                        <!-- Table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Disease: </th>
+                                    <td>@Model.Item3</td>
+                                </tr>
+                                <tr>
+                                    <th>Medicine: </th>
+                                    <td>@Model.Item4</td>
+                                </tr>
+                                <tr>
+
+                                    <th>Dosage: </th>
+                                    <td>@Model.Item2</td>
+                                </tr>
+                                <tr>
+                                    <th>Diet: </th>
+                                    <td>@Model.Item1</td>
+                                </tr>
+                            </thead>
+
+
+                        </table>
+                    </div>
+                    @*<div class="col-md-offset-2 col-md-10">
+
+                        <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
+                    </div>*@
+                </div>
+                <div class='col-md-9'>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+
+<script>
+                    new WOW().init();
+</script>
+<!-- //animation -->
+<!-- start-smooth-scrolling -->
+@*<script type="text/javascript" src="~/theme/js/move-top.js"></script>
+    <script type="text/javascript" src="~/theme/js/easing.js"></script>*@
+<script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        $(".scroll").click(function (event) {
+                            event.preventDefault();
+                            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                        });
+                    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script type="text/javascript">
+                    $(document).ready(function () {
+                        /*
+                        var defaults = {
+                            containerID: 'toTop', // fading element id
+                            containerHoverID: 'toTopHover', // fading element hover id
+                            scrollSpeed: 1200,
+                            easingType: 'linear'
+                        };
+                        */
+
+                        $().UItoTop({ easingType: 'easeOutQuart' });
+
+                    });
+</script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="~/Theme/js/bootstrap.js"></script>
+

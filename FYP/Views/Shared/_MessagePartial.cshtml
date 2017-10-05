@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using FYP.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @*<form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a asp-area="" asp-controller="Manage" asp-action="Index" id="message" data-email="@UserManager.GetUserName(User)" title="Manage">@UserManager.GetUserName(User)</a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+            </li>
+        </ul>
+    </form>*@
+
+    <li role="presentation"><a href="/email/readMessages?to=@UserManager.GetUserName(User)" data-email="@UserManager.GetUserName(User)" id="mail">Messages <span class="badge" id="message"></span></a></li>
+}
+else
+{
+
+    //HttpContextAccessor.HttpContext.Response.Redirect("/Home/noreply");
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+}
+
+
+

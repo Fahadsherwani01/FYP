@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Email>
+
+@{ 
+    Layout = "navbaradmin";
+}
+
+
+<div>
+    <div class="form-horizontal">
+        <div class="contentBox">
+            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Inbox</h1>
+
+            <div class="col-md-12 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading"><h4 style="text-align:center">Message</h4></div>
+                    <div class="panel-body">
+                        <p>...</p>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                    <!-- Table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th><a href="/email/read?id=@item.Id&name=@item.To">@item.From</a></th>
+                                    <th>@item.To</th>
+                                    <th>@item.Message</th>
+                                    <th><a class="btn btn-default admin" href="/email/read?id=@item.Id&name=@item.To" >View Message</a></th>
+
+                                </tr>
+
+
+                            </thead>
+
+
+                        </table>
+                    }
+                </div>
+                @*<div class="col-md-offset-2 col-md-10">
+
+                        <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
+                    </div>*@
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
