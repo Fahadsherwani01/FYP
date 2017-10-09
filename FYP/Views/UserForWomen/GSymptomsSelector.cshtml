@@ -10,19 +10,20 @@
             <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Symptom Selector</h1>
             
                 <p class='text-info'><b>Step 4:</b> Select a symptoms against your disease for which you want medication</p>
-                <div class="col-md-6 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                <div class="col-md-8 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
                     <ul>
                         @foreach (string R in Model)
                         {
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info  symptom'>@R</li></a>
+                            <a href='#'><li class='btn form-control btn-primary list-group-item-info  symptom' style="margin-bottom:4px;word-wrap:break-word;white-space:normal !important;height:45px">@R</li></a>
                         }
+                        <li class='btn form-control btn-primary list-group-item-info  symptom' style="height:45px">Other</li>
                     </ul>
                     @*<div class="col-md-offset-2 col-md-10">
 
                         <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
                     </div>*@
                 </div>
-                <div class='col-md-9'>
+                <div class='col-md-6'>
                     <img id="img" name="img" alt='' src=@ViewBag.url data-url=@ViewBag.imgURL />
                 </div>
             </div>

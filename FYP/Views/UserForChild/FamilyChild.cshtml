@@ -12,24 +12,24 @@
             <div class='symptomBoxWrapper'>
                 <p class='intro-text'><b>Step 2:</b> Select a body part where you are experiencing symptoms.</p>
                 <div class='symptomBox clearAfter'>
-                    <div class="col-md-3 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                    <div class="col-md-5 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
                         <ul>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="1" onmouseover='symptomBody(1);' onmouseout='symptomBody(0);'>Head and Neck</li></a>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="2" onmouseover='symptomBody(2);' onmouseout='symptomBody(0);'>Eyes</li></a>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="3" onmouseover='symptomBody(3);' onmouseout='symptomBody(0);'>Ear, Nose and Throat</li></a>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="4" onmouseover='symptomBody(4);' onmouseout='symptomBody(0);'>Chest and Back</li></a>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="5" onmouseover='symptomBody(5);' onmouseout='symptomBody(0);'>Arms and Hands</li></a>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="6" onmouseover='symptomBody(6);' onmouseout='symptomBody(0);'>Abdomen and Pelvis</li></a>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="7" onmouseover='symptomBody(7);' onmouseout='symptomBody(0);'>Legs and Feet</li></a>
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info bodypart' data-url="8" onmouseover='symptomBody(8);' onmouseout='symptomBody(0);'>Other</li></a>
-
+                            <li class='btn form-control btn-primary list-group-item-info bodypart' data-url="1" onmouseover='symptomBody(1);' onmouseout='symptomBody(0);'>Head and Neck</li>
+                            <li class='btn form-control btn-primary list-group-item-info bodypart' data-url="2" onmouseover='symptomBody(2);' onmouseout='symptomBody(0);'>Eyes</li>
+                            <li class='btn form-control btn-primary list-group-item-info bodypart' data-url="3" onmouseover='symptomBody(3);' onmouseout='symptomBody(0);'>Ear, Nose and Throat</li>
+                            <li class='btn form-control btn-primary list-group-item-info bodypart' data-url="4" onmouseover='symptomBody(4);' onmouseout='symptomBody(0);'>Chest and Back</li>
+                            <li class='btn form-control btn-primary list-group-item-info bodypart' data-url="5" onmouseover='symptomBody(5);' onmouseout='symptomBody(0);'>Arms and Hands</li>
+                            <li class='btn form-control btn-primary list-group-item-info bodypart' data-url="6" onmouseover='symptomBody(6);' onmouseout='symptomBody(0);'>Abdomen and Pelvis</li>
+                            <li class='btn form-control btn-primary list-group-item-info bodypart' data-url="7" onmouseover='symptomBody(7);' onmouseout='symptomBody(0);'>Legs and Feet</li>
+                            @*<li class='btn form-control btn-primary list-group-item-info bodypart' data-url="8" onmouseover='symptomBody(8);' onmouseout='symptomBody(0);'>Other</li>*@
+                            <li class='btn form-control btn-primary list-group-item-info' data-url="8"> <a href="/email/AdminMail?gander=Child&diseace=&bodypart=">Other</a></li>
                         </ul>
-                        <div class="col-md-offset-2 col-md-10">
+                        @*<div class="col-md-offset-2 col-md-10">
 
                             <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
-                        </div>
+                        </div>*@
                     </div>
-                    <div class="col-md-7 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                    <div class="col-md-5 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
                         <img id='bodyModel' alt='' src='~/images/pics/children/child.jpg' width='266' height='400' usemap='#SymptomMap' />
                         <img alt='' src='~/images/pics/children/child-1.jpg' width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->
                         <img alt='' src='~/images/pics/children/child-2.jpg' width='266' height='400' style='position: absolute; left: -5000px;' /> <!-- Preloading -->

@@ -16,6 +16,7 @@ namespace FYP.Controllers
         private userDetailContext mycon = null;
         static string msg;
         
+
         public UserController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, userDetailContext con)
         {
 
@@ -23,6 +24,7 @@ namespace FYP.Controllers
             _userManager = userManager;
             mycon = con;
         }
+
 
 
         public IActionResult WelcomeUser()
@@ -146,6 +148,7 @@ namespace FYP.Controllers
             ViewBag.imgURL = "/images/pics/male/male-" + img + ".jpg";
             if (_signInManager.IsSignedIn(User))
             {
+                
                  IEnumerable<string> subCategory = (from p in mycon.Tbladminmedicationrecord
                                                where p.Bodypart == key
                                                select p.Disease).Distinct();
@@ -183,6 +186,7 @@ namespace FYP.Controllers
             //ViewBag.disease = key;
             msg = key;
             ViewBag.url = img;
+           
             if (_signInManager.IsSignedIn(User))
             {
 

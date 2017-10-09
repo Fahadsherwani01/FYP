@@ -13,19 +13,18 @@
             <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Disease Selector</h1>
             
                 <p class='text-info active'><b>Step 3:</b> Select a disease for which you want medication</p>
-                <div class="col-md-3 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
+                <div class="col-md-5 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
                     <ul>
                         @foreach (string R in Model)
                         {
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info diseaseselector'>@R</li></a>
+                            <li class='btn form-control btn-primary list-group-item-info diseaseselector'>@R</li>
                         }
                     </ul>
-                    @*<div class="col-md-offset-2 col-md-10">
+                    <a href="/email/AdminMail?gander=Child&diseace=&bodypart=@ViewBag.key"> <li class='btn form-control btn-primary list-group-item-info diseaseselector'>Other</li></a>
 
-                        <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">
-                    </div>*@
+                
                 </div>
-                <div class='col-md-8'>
+                <div class='col-md-6'>
                     <img id="img" name="img" alt='' src=@ViewBag.imgURL data-url=@ViewBag.imgURL />
                 </div>
             </div>
@@ -33,7 +32,7 @@
     </div>
 @section Scripts{
 <script>
-    alert(1);
+    
     $('.diseaseselector').click(function () {
 
         

@@ -19,7 +19,7 @@
                         {
                             <li class='btn form-control btn-primary list-group-item-info diseaseselector'>@R</li>
                         }
-                            <li  class='btn form-control btn-primary list-group-item-info diseaseselector'><a href="/email/AdminMail?gander=Male&diseace=&bodypart=@ViewBag.key"  >Other</a></li>
+                        <a href="/email/AdminMail?gander=Male&diseace=&bodypart=@ViewBag.key"> <li class='btn form-control btn-primary list-group-item-info diseaseselector'>Other</li></a>
                     </ul>
                     <div class="col-md-offset-2 col-md-10">
 
@@ -41,10 +41,10 @@
     $('.diseaseselector').click(function () {
 
        
-        //var img = $(this).data("url");
         var key = $(this).html();
         var img = $("#img").data("url");
-      
+       
+        
         window.location.href = "/User/GSSelector?key=" + key + "&img=" + img;
     
 

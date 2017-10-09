@@ -14,6 +14,7 @@ namespace FYP.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
 
         private userDetailContext mycon = null;
+        static string msg;
         public UserForChildController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, userDetailContext con)
         {
 
@@ -109,6 +110,7 @@ namespace FYP.Controllers
 
         public IActionResult Selector(string key, string img)
         {
+            ViewBag.key = key;
             ViewBag.imgURL = "/images/pics/children/child-" + img + ".jpg";
             if (_signInManager.IsSignedIn(User))
             {
@@ -146,6 +148,7 @@ namespace FYP.Controllers
 
         public IActionResult GSSelector(string key, string img)
         {
+            msg = key;
             ViewBag.url = img;
             if (_signInManager.IsSignedIn(User))
             {
@@ -187,9 +190,28 @@ namespace FYP.Controllers
 
         public IActionResult MSelector(string key)
         {
+            string abc2 = msg;
 
             if (_signInManager.IsSignedIn(User))
             {
+
+                if (key == "Other")
+                {
+                    var subCategory2 = (from p in mycon.tableForChild
+                                        where p.Disease == msg
+                                        select new
+                                        {
+                                            gander = p.Gender,
+                                            bodypart = p.Bodypart,
+
+
+                                        }).First();
+
+                    return Redirect("/email/AdminMail?gander=" + subCategory2.gander + "&bodypart=" + subCategory2.bodypart + "&diseace=" + msg);
+
+                }
+
+
                 PrescriptionDetail preObject = new PrescriptionDetail();
                 MedicalHistory medObject = new MedicalHistory();
 

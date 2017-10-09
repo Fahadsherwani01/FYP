@@ -14,8 +14,10 @@
                     <ul>
                         @foreach (string R in Model)
                         {
-                            <a href='#'><li class='btn form-control btn-primary list-group-item-info  symptom'>@R</li></a>
+                            <li class='btn form-control btn-primary list-group-item-info  symptom' style="margin-bottom:4px;word-wrap:break-word;white-space:normal !important;height:45px">@R</li>
                         }
+                        <li class='btn form-control btn-primary list-group-item-info  symptom' style="height:45px">Other</li>
+
                     </ul>
                     @*<div class="col-md-offset-2 col-md-10">
 
