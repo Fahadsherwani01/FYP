@@ -12,6 +12,8 @@
   <ItemGroup>
     <Content Include="wwwroot\css\font1.css" />
     <Content Include="wwwroot\css\font2.css" />
+    <Content Include="wwwroot\dataTable.css" />
+    <Content Include="wwwroot\dataTable.js" />
     <Content Include="wwwroot\Login\css\style.css" />
     <Content Include="wwwroot\Login\js\index.js" />
     <Content Include="wwwroot\profilePic\Capture.PNG" />

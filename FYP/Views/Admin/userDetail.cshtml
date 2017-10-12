@@ -16,27 +16,38 @@
                     <div class="panel-heading"><h4 style="text-align:center">User</h4></div>
                     <div class="panel-body">
                         <p>...</p>
-                    </div>
-                    @foreach (var item in Model)
-                    {
-                    <!-- Table -->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>@item.UserName</th>
-                                    <td>@item.Email</td>
-                                    <th></th>
-                                    <th><a class="btn btn-default admin" href="/Admin/userProfile?email=@item.Email">Profile</a> <a class="btn btn-default admin" href="/Admin/userCheckupHsitory?email=@item.Email">Checkup History</a></th>
+                    </div>  
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>UserName</th>
+                                <th>Email</th>
+                                <th>Profile</th>
+                                <th>History</a></th>
 
-                                </tr>
+                            </tr>
+
+                        </thead>
+                                                    @foreach (var item in Model)
+                                                    {
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>@item.UserName</td>
+                                                                <td>@item.Email</td>
+                                                                <td><a class="btn btn-default admin" href="/Admin/userProfile?email=@item.Email">Profile</a></td>
+                                                                <td> <a class="btn btn-default admin" href="/Admin/userCheckupHsitory?email=@item.Email">Checkup History</a></td>
+                                                            </tr>
+                                                         </tbody>
+                           
 
 
-                            </thead>
 
-
+                            }
                         </table>
-                    }
-                </div>
+
+                        </div>
+
                 @*<div class="col-md-offset-2 col-md-10">
 
                         <input class="btn btn-info" data-wow-delay=".5s" type="submit" value="Start Over">

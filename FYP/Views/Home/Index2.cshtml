@@ -89,17 +89,17 @@
                 <h3 class="w3layouts-title wow fadeInDown animated" data-wow-delay=".5s">Services</h3>
                 <div class="services-w3row">
                     <div class="col-md-3 col-sm-3 col-xs-6 services-agile-grid">
-                        <span class="glyphicon glyphicon-check wthree-effect" aria-hidden="true"></span>
+                        <span  class="glyphicon glyphicon-check wthree-effect" aria-hidden="true"></span>
                         <div class="services-text w3-agileits">
-                            <h5 class="w3-agile-counter">0</h5>
+                            <h5 class="w3-agile-counter">@Model.Count()</h5>
                             <p>Views</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6 services-agile-grid">
                         <span class="glyphicon glyphicon-user wthree-effect" aria-hidden="true"></span>
                         <div class="services-text">
-                            <h5 class="w3-agile-counter">2</h5>
-                            <p>Visitor</p>
+                            <h5 class="w3-agile-counter">@ViewBag.list</h5>
+                            <p>Users</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6 services-agile-grid">
@@ -245,7 +245,7 @@
         <div class="testimonial services">
             <!-- container -->
             <div class="container">
-                <h3 class="w3layouts-title wow fadeInDown animated" data-wow-delay=".5s">Feedback About us</h3>
+             <h3 class="w3layouts-title wow fadeInDown animated btn center-block" data-wow-delay=".5s" data-toggle="modal" data-target="#myModal">Feedback</h3>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -261,7 +261,7 @@
                                         <img src="" alt="" />
                                     </div>
                                     <div class="testimonial-right">
-                                        <h5></h5>
+                                        <h5>Fahad Ali Khan</h5>
                                         <p>
                                             <span>"</span> A marvelous step yet limited. Quite helpful though keep it up <span>"</span>
                                         </p>
@@ -312,6 +312,34 @@
             </div>
             <!-- //container -->
         </div>
+
+<div id="myModal" class=" modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        Modal content
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="name">FeedBack</h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon2">Name</span><input id="Cname" type="text" required="" class="form-control" aria-describedby="basic-addon2">
+
+                </div>
+                <div>
+                   <textarea class="form-control" id="cmt"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer btn-group">
+                <button id="cart" class="btn btn-default">Add to cart</button>
+                <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
         <!-- //testimonial -->
         <!-- contact -->
         <div class="contact" id="contact">
@@ -382,12 +410,12 @@
         @*<script type="text/javascript" src="~/theme/js/move-top.js"></script>
         <script type="text/javascript" src="~/theme/js/easing.js"></script>*@
         <script type="text/javascript">
-                    jQuery(document).ready(function ($) {
-                        $(".scroll").click(function (event) {
-                            event.preventDefault();
-                            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
-                        });
-                    });
+                    //jQuery(document).ready(function ($) {
+                    //    $(".scroll").click(function (event) {
+                    //        event.preventDefault();
+                    //        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                    //    });
+                    //});
         </script>
         <!-- //end-smooth-scrolling -->
         <!-- smooth-scrolling-of-move-up -->
@@ -406,6 +434,43 @@
 
                     });
         </script>
+
+          <script>
+                    $("#cart").click(function () {
+
+
+                        
+
+                        $.ajax({
+
+                            url: "/home/AddFeedBack",
+                            datatype: "text",
+                            data: {
+                                'Name': $('#Cname').val(), 'cmt': document.getElementById("cmt").value },
+                            type: "GET",
+                            beforeSend: function () {
+                                $("#close").prop("disabled", true);
+                                $("#cart").attr("disabled", true);
+                            },
+                            success: function (data) {
+                                alert("Thanks for your feedback")
+                                location.reload();
+                                //alert(data);
+                                //document.getElementById("close").click();
+                                //$("#close").prop("disabled", false);
+                                //$("#cart").attr("disabled", false);
+                            },
+                            error: function () {
+                                alert("ERROR, Try Again");
+                            },
+                            complete: function () {
+                                $("#quantity").attr("value", null);
+
+                            }
+                        });
+                    });
+</script>
+
         <!-- //smooth-scrolling-of-move-up -->
         <!-- Bootstrap core JavaScript
         ================================================== -->

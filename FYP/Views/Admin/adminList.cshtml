@@ -8,34 +8,43 @@
 <div>
     <div class="form-horizontal">
         <div class="contentBox">
-            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Users</h1>
+            <h1 class='w3layouts-title wow fadeInDown animated well well-lg footer-bottom' style="color:white">Admin</h1>
 
             <div class="col-md-12 welcome-grids  welcome-mdl1 wow zoomIn animated well well-lg">
                 <div class="panel panel-primary">
                     <!-- Default panel contents -->
-                    <div class="panel-heading"><h4 style="text-align:center">Admin</h4></div>
+                    <div class="panel-heading"><h4 style="text-align:center">Admins</h4></div>
                     <div class="panel-body">
                         <p>...</p>
                     </div>
-                    @foreach (var item in Model)
-                    {
-                    <!-- Table -->
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>@item.UserName</th>
-                                <td>@item.Email</td>
-                                <th>@item.Address</th>
-                                <th><a class="btn btn-default admin" data-email=@item.Email >Make Admin</a></th>
-                              
-                            </tr>
-                           
-                           
-                        </thead>
+                    <table class="table"><thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Remove Admin</th>
+
+    </tr>
 
 
+</thead>
+                        @foreach (var item in Model)
+                        {
+                    
+                            <tbody>
+                                <tr>
+                                    <td>@item.UserName</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Address</td>
+                                    <td><a class="btn btn-default admin" data-email=@item.Email>Remove Admin</a></td>
+                                </tr>
+                            </tbody>
+                            
+
+
+
+                        }
                     </table>
-                    }
                 </div>
                 @*<div class="col-md-offset-2 col-md-10">
 
@@ -62,7 +71,8 @@
 
                 success: function (data) {
 
-                    alert("Added To ADMIN");
+                    alert("ADMIN REMOVED");
+                    location.reload();
                 }
 
             });

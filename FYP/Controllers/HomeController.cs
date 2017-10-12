@@ -78,6 +78,8 @@ namespace FYP.Controllers
             }
 
             IEnumerable<feedback> obj = db.feedback.ToList();
+            string users = db.User.ToList().Count.ToString();
+            ViewBag.list = users;
 
             return View(obj);
         }
@@ -234,6 +236,18 @@ namespace FYP.Controllers
             
             var d = Newtonsoft.Json.JsonConvert.DeserializeObject<jsonData>(responseData);
             return View(d);
+        }
+
+        public int AddFeedBack(string Name, string cmt)
+        {
+            feedback obj = new feedback();
+            obj.Name = Name;
+            obj.Comment = cmt;
+            obj.Date = DateTime.Now.ToString();
+
+            db.feedback.Add(obj);
+            db.SaveChanges();
+            return 1;
         }
 
     }

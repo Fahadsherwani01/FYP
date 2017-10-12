@@ -17,25 +17,36 @@
                     <div class="panel-body">
                         <p>...</p>
                     </div>
-                    @foreach (var item in Model)
-                    {
-                    <!-- Table -->
                     <table class="table">
-                        <thead>
-                            <tr>
-                                <th>@item.UserName</th>
-                                <td>@item.Email</td>
-                                <th>@item.Address</th>
-                                <th><a class="btn btn-default admin" data-email=@item.Email >Make Admin</a></th>
-                              
-                            </tr>
-                           
-                           
-                        </thead>
+                      
+                    <!-- Table -->
+
+                            <thead>
+                                <tr>
+                                    <th>UserName</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Action</th>
+
+                                </tr>
 
 
+                            </thead>
+                    @foreach (var item in Model)
+                          {
+                           <tbody>
+                               <tr>
+                                   <td>@item.UserName</td>
+                                   <td>@item.Email</td>
+                                   <td>@item.Address</td>
+                                   <td><a class="btn btn-default admin" data-email=@item.Email>Make Admin</a></td>
+                               </tr>
+
+                            </tbody>
+
+    
+                                 }
                     </table>
-                    }
                 </div>
                 @*<div class="col-md-offset-2 col-md-10">
 
@@ -63,6 +74,7 @@
                 success: function (data) {
 
                     alert("Added To ADMIN");
+                    location.reload();
                 }
 
             });
