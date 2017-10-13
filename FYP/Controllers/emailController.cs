@@ -56,7 +56,7 @@ namespace FYP.Controllers
         public IActionResult AdminMail(string gander, string bodypart, string diseace, string gsSymptoms)
         {
 
-            string msg = "Gander : " + gander + ", Bodypart : " + bodypart + ", Diseace : " + diseace + ", General Symptoms : " + gsSymptoms;
+            string msg = "Gander :"+ gander + ", Bodypart :" + bodypart + ",Diseace :" + diseace + ",General Symptoms :" + gsSymptoms;
 
             Email mail = new Email();
             mail.To = "Admin";
@@ -100,20 +100,26 @@ namespace FYP.Controllers
 
             if(name!="Admin")
             {
-                return View("readForUser", read);
+                string[] data = read.Message.Split(',');
+                string[] Medicine = data[0].Split(':');
+                string[] Diet = data[1].Split(':');
+                string[] Precautions = data[2].Split(':');
+
+                var userData = Tuple.Create(Medicine[1],Diet[1],Precautions[1]);
+                return View("readForUser", userData);
             }
 
             return View(read);
         }
 
-        public IActionResult replyToUser(string to,string reply,string from1)
+        public IActionResult replyToUser(string to,string fromU, string Medicine,string Diet,string Precautions)
         {
             Email obj = new Email();
            
-            obj.To = to;
-            obj.From = from1;
+            obj.To = fromU;
+            obj.From = to;
             obj.Read = "unreaded";
-            obj.Message = reply;
+            obj.Message = "Medicine:"+Medicine+",Diet:"+Diet+",Precautions:"+Precautions;
             obj.Date = DateTime.Now.Date.ToString();
             db.Email.Add(obj);
             db.SaveChanges();

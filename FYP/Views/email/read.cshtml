@@ -20,48 +20,63 @@
 
                     <!-- Table -->
                     @{ 
-                        string[] tokens = Model.Message.Split(':');
-                    
+                        string[] tokens = Model.Message.Split(',');
+                        string[] Gender = tokens[0].Split(':');
+                        string[] Bodypart = tokens[1].Split(':');
+                        string[] Diseace = tokens[2].Split(':');
+                        string[] General = tokens[3].Split(':');
+
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th>Gander: </th>
-                                    <td>@tokens[0]</td>
+                                    <td>@Gender[1]</td>
                                 </tr>
                                 <tr>
                                     <th>Body Part: </th>
-                                    <td>@tokens[1]</td>
+                                    <td>@Bodypart[1]</td>
                                 </tr>
                                 <tr>
 
                                     <th>Diseace: </th>
-                                    <td>@tokens[2]</td>
+                                    <td>@Diseace[1]</td>
                                 </tr>
                                 <tr>
                                     <th>General Symptoms: </th>
-                                    <td>@tokens[3]</td>
+                                    <td>@General[1]</td>
                                 </tr>
                             </thead>
-
-
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Reply
+                                    </td>
+                                    <td>
+                                        <form asp-action="replyToUser" asp-controller="email">
+                                            <div class="col-lg-6">
+                                                <div>
+                                                    <input type="hidden" name="to" class="input-group" value="@Model.From" />
+                                                    <input type="hidden" id="from1" name="from1" class="input-group" value="@Model.To" />
+                                                </div>
+                                                <div>
+                                                    @*<input type="text" id="reply" name="reply" class="form-group">*@
+                                                    <textarea  type="text" id="reply" name="reply" class="form-group"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                        <input type="submit" class="btn btn-default" value="Send" />
+                                                        <a href="sdfsdf"><input type="button" value="add to table" class="btn btn-default" /></a>
+                                                    </span>
+                                                </div><!-- /input-group -->
+                                            </div><!-- /.col-lg-6 -->
+                                        </form>
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
                         </table>
                     }
-                    <form asp-action="replyToUser" asp-controller="email">
-                        <div class="col-lg-6">
-                        <div>
-                            To<input id="to" name="to" class="input-group" value="@Model.From" />
-                            From<input id="from1" name="from1" class="input-group" value="@Model.To" />
-                        </div>
-                        <div>
-                             <input type="text" id="reply" name="reply" class="form-group">
-                         </div>
-                        <div class="input-group">
-                             <span class="input-group-btn">
-                                  <input type="submit" class="btn btn-default"  value="Send" />
-                            </span>
-                         </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
-                    </form>
                 </div>
                 @*<div class="col-md-offset-2 col-md-10">
 

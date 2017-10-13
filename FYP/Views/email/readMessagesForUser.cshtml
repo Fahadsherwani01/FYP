@@ -17,25 +17,31 @@
                     <div class="panel-body">
                         <p>...</p>
                     </div>
-                    @foreach (var item in Model)
-                    {
-                    <!-- Table -->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th><a href="/email/read?id=@item.Id&name=@item.To">@item.From</a></th>
-                                    <th>@item.To</th>
-                                    <th>@item.Message</th>
-                                    <th><a class="btn btn-default admin" href="/email/read?id=@item.Id&name=@item.To" >View Message</a></th>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Message</th>
+                                <th>Action</th>
 
-                                </tr>
+                            </tr>
 
 
-                            </thead>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                         <tbody>
+                             <tr>
+                                 <td><a href="/email/read?id=@item.Id&name=@item.To">@item.From</a></td>
+                                 <td>@item.To</td>
+                                 <td>@item.Message</td>
+                                 <td><a class="btn btn-default admin" href="/email/read?id=@item.Id&name=@item.To">View Message</a></td>
 
-
-                        </table>
-                    }
+                             </tr>
+                         </tbody>
+                        }
+                    </table>
                 </div>
                 @*<div class="col-md-offset-2 col-md-10">
 

@@ -201,6 +201,99 @@ namespace FYP.Controllers
             return total;
         }
 
+        public IActionResult addCondition(string id, string name)
+        {
+
+           
+
+
+            int msgId = Int32.Parse(id);
+            Email read = db.Email.Where(e => e.Id == msgId).Single();
+            read.Read = "readed";
+
+            db.Entry(read).State = EntityState.Modified;
+            db.SaveChanges();
+            Tbladminmedicationrecord data = new Tbladminmedicationrecord();
+
+            ViewBag.to = read.To;
+            ViewBag.from = read.From;
+            
+
+
+            string[] message = read.Message.Split(',');
+
+            
+            string[] Gender = message[0].Split(':');
+            string[] Bodypart = message[1].Split(':');
+            string[] Diseace = message[2].Split(':');
+            string[] General = message[3].Split(':');
+
+            data.Gender = Gender[1];
+            data.Disease = Diseace[1];
+            data.Generalsymptoms = General[1];
+            data.Bodypart = Bodypart[1];
+            
+
+
+            return View(data);
+        }
+
+
+        public IActionResult addToTable(Tbladminmedicationrecord obj,string bp,string temp,string hb)
+        {
+            obj.Bloodpresure = bp;
+            obj.Temprature = temp;
+            obj.Heartbeat = hb;
+            string gender = obj.Gender;
+            
+                if(gender=="Man")
+                    {
+                        db.Tbladminmedicationrecord.Add(obj);
+                        db.SaveChanges();
+                       
+                    }
+                else if(gender=="Female")
+                    {
+                        tableForWomen obj2 = new tableForWomen();
+                        obj2.Bloodpresure = obj.Bloodpresure;
+                        obj2.Bodypart = obj.Bodypart;
+                        obj2.Diet = obj.Diet;
+                        obj2.Disease = obj.Disease;
+                        obj2.Dosage = obj.Dosage;
+                        obj2.Gender = obj.Gender;
+                        obj2.Generalsymptoms = obj.Generalsymptoms;
+                        obj2.Heartbeat = obj.Heartbeat;
+                        obj2.Medicine = obj.Medicine;
+                        obj2.Precautions = obj.Precautions;
+                        obj2.Temprature = obj.Temprature;
+                       
+
+                        db.tableForWomen.Add(obj2);
+                        db.SaveChanges();
+                       
+                    }
+                else if(gender== "Child")
+                    {
+                        tableForChild obj2 = new tableForChild();
+                        obj2.Bloodpresure = obj.Bloodpresure;
+                        obj2.Bodypart = obj.Bodypart;
+                        obj2.Diet = obj.Diet;
+                        obj2.Disease = obj.Disease;
+                        obj2.Dosage = obj.Dosage;
+                        obj2.Gender = obj.Gender;
+                        obj2.Generalsymptoms = obj.Generalsymptoms;
+                        obj2.Heartbeat = obj.Heartbeat;
+                        obj2.Medicine = obj.Medicine;
+                        obj2.Precautions = obj.Precautions;
+                        obj2.Temprature = obj.Temprature;
+                        db.tableForChild.Add(obj2);
+                        db.SaveChanges();
+                        
+                    }
+            
+            return View("");
+        }
+
 
     }
 }

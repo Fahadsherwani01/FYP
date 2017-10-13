@@ -1,0 +1,175 @@
+@model FYP.Models.Tbladminmedicationrecord
+
+@{
+    ViewData["Title"] = "addCondition";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+<h2>addCondition</h2>
+<input type="hidden" id="to" value="@ViewBag.to" />
+<input type="hidden" id="fromU" value="@ViewBag.from" />
+
+<form asp-action="addToTable">
+    <div class="form-horizontal">
+        <h4>Admin</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Gender" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Bodypart" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Bodypart" class="form-control" />
+                <span asp-validation-for="Bodypart" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Disease" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Disease" class="form-control" />
+                <span asp-validation-for="Disease" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Bloodpresure" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Bloodpresure" class="form-control" />*@
+
+                <select id="bp" name="bp">
+                    <option >
+                        Normal
+                    </option>
+                    <option>
+                        High
+                    </option>
+                    <option>
+                        Low
+                    </option>
+                </select>
+                <span asp-validation-for="Bloodpresure" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Heartbeat" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Heartbeat" class="form-control" />*@
+
+                <select id="hb" name="hb">
+                    <option>
+                        Normal
+                    </option>
+                    <option>
+                        High
+                    </option>
+                    <option>
+                        Low
+                    </option>
+                </select>
+                <span asp-validation-for="Heartbeat" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Temprature" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @*<input asp-for="Temprature" class="form-control" />*@
+                <select id="temp" name="temp">
+                    <option>
+                        Normal
+                    </option>
+                    <option>
+                        High
+                    </option>
+                    <option>
+                        Low
+                    </option>
+                </select>
+                <span asp-validation-for="Temprature" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Generalsymptoms" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Generalsymptoms" class="form-control" />
+                <span asp-validation-for="Generalsymptoms" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Medicine" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Medicine" class="form-control" />
+                <span asp-validation-for="Medicine" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Dosage" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Dosage" id="Dosage" class="form-control" />
+                <span asp-validation-for="Dosage" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Precautions" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Precautions" id="Precautions" class="form-control" />
+                <span asp-validation-for="Precautions" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Diet" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Diet" id="Diet" class="form-control" />
+                <span asp-validation-for="Diet" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="button" value="Reply" id="Reply" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{
+    <script>
+        alert("asdsad");
+        $("#Reply").click(function () {
+            alert("asdsad")
+            //alert('hhdh');
+
+            $.ajax({
+
+                url: "/email/replyToUser",
+                datatype: "text",
+                data: { 'to': $('#to').val(), 'fromU': $('#fromU').val(), 'Medicine': $('#Medicine').val(), 'Diet': $('#Diet').val(), 'Precautions': $('#Precautions').val() },
+                type: "GET",
+                beforeSend: function () {
+                    $("#close").prop("disabled", true);
+                    $("#cart").attr("disabled", true);
+                },
+                success: function (data) {
+                    alert("Added To Cart");
+                    document.getElementById("close").click();
+                    $("#close").prop("disabled", false);
+                    $("#cart").attr("disabled", false);
+                },
+                error: function () {
+                    alert("ERROR, Try Again");
+                },
+                complete: function () {
+                    $("#quantity").attr("value", null);
+
+                }
+            });
+        });
+    </script>
+}
